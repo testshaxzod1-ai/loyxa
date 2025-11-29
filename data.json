@@ -1,0 +1,15 @@
+{
+    "problem": "Davlat organlari global tarmoqdagi tahdidlarni aniqlash, nomaʼlum IP manzillarni monitoring qilish, kiberhujumlarga qarshi barvaqt choralar ko‘rishda qiyinchilikka duch keladi.",
+    "solution": "Foydalanuvchi ruxsatisiz IP olish emas, balki:\r\n\r\nDavlat tarmoqlari uchun markazlashgan xavfsizlik tahlili platformasi\r\n\r\nTelegram, VoIP va P2P trafikdagi tahdidlarni avtomatik aniqlaydigan AI tizimi\r\n\r\nGlobal IP manzillarni ruxsat asosida tahlil qilish\r\n\r\nZero-trust arxitektura yordamida trafikni xavfsiz yo‘naltirish\r\n\r\nBu yechim qonuniy, korporativ, davlat tizimlari uchun mos.",
+    "why_us": "Men buni professional tarzda tuzib beraman, masalan:\r\n\r\nTarmoq darajasida P2P trafikni tahlil qilish boyicha tajriba\r\n\r\nAI asosida kiberxavfsizlik loyihalarida ishlagan mutaxassislar\r\n\r\nDavlat organlari uchun xavfsizlik standartlari (ISO 27001)ni bilish\r\n\r\nTelegram, VoIP, WebRTC protokollari bo‘yicha ekspertlik\r\n\r\nBularni sizning haqiqiy jamoangizga moslab yozib beraman.",
+    "roadmap": "Idea: Konsepsiya, talablarni yig‘ish\r\nPrototype: Trafik simulyatsiyasi, test modeli\r\nMVP: AI asosida tahdid aniqlash + IP risk scoring\r\nLaunched: Gov-serverlarga joylash, monitoring dashboard",
+    "implementation": "Python (FastAPI, Flask)\r\n\r\nAI model (Anomaly Detection)\r\n\r\nNetwork scanning (Zmap, Nmap)\r\n\r\nSIEM (ELK, Wazuh)\r\n\r\nTraffic analysis (Zeek, Suricata)\r\n\r\nDevOps (Docker, )",
+    "team": [
+        {
+            "name": "Shaxzod Mirzayusupov",
+            "role": "CyberSecurty",
+            "skills": "PENETRATION TESTING DIGITAL FORENSICS, BUG BOUNTY, THREAN HUNTING REVERSE ENGINEERING, NETWORK SECURITY, SYSTEM SECURITY THREAT INTELLIGENCE, WINDOWS SERVER, LINUX SERVER , SOC ANALYSIS, SIEM, SPLUNK PAM ZABBIX, GRAFANA, ELASTIC SEARCH, CLOUD SECURITY, CLOUD PENTESTING PENTESTING, MOBILE APPLICATIONS PENTESTING, WEB APPLICATION PENTESTING,",
+            "link": "https://github.com/shaxzodbara"
+        }
+    ]
+}
