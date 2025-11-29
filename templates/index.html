@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>BlackSpaceTm – Startup</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Custom Style -->
+    <style>
+
+        /* ===== Global ===== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0f10, #1c1f26);
+            color: #e0e6f0;
+            overflow-x: hidden;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar-custom {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.6rem;
+            background: linear-gradient(90deg, #4a90e2, #6cd1ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            background: linear-gradient(135deg, #007affcc, #4a90e2cc);
+            color: white;
+            padding: 90px 25px;
+            border-radius: 25px;
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero h1 {
+            font-weight: 800;
+            font-size: 50px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        /* ===== Section Cards ===== */
+        .section-card {
+            background: rgba(255,255,255,0.06);
+            padding: 45px;
+            border-radius: 20px;
+            margin-bottom: 45px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+            transition: 0.3s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 55px rgba(0,0,0,0.35);
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 28px;
+            background: linear-gradient(90deg, #6cd1ff, #007aff);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 25px;
+        }
+
+        /* ===== Team Cards ===== */
+        .team-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.30);
+            border-color: #6cd1ffaa;
+        }
+
+        .team-card h4 {
+            font-weight: 600;
+            font-size: 22px;
+            color: #ffffff;
+        }
+
+        .team-card p {
+            color: #d1d9e6;
+        }
+
+        .team-card a {
+            color: #6cd1ff;
+            text-decoration: none;
+        }
+
+        .team-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Logout Button ===== */
+        .logout-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 999;
+            padding: 12px 28px;
+            font-size: 17px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+    </style>
+</head>
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-custom px-4">
+    <a class="navbar-brand" href="#">BlackspaceTm</a>
+</nav>
+
+
+<div class="container py-5">
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>BlackspaceTm</h1>
+        <p>Mening loyhamning asosiy maqsadi va yo‘nalishi</p>
+    </div>
+
+
+    <!-- 1. Muammo - Yechim -->
+    <div class="section-card">
+        <h2 class="section-title"><i class="bi bi-exclamation-circle"></i> 1. Hozirgi kundagi muammo</h2>
+        <p><strong style="color:#6cd1ff;">Muammo:</strong> {{ data.problem }}</p>
+        <p class="mt-3"><strong style="color:#6cd1ff;">Yechim:</strong> {{ data.solution }}</p>
+    </div>
+
+
+    <!-- 2. Jamoa -->
+    <div class="section-card">
+        <h2 class="section-title"><i class="bi bi-people-fill"></i> 2. Bizning Jamoa</h2>
+
+        {% if data.team %}
+        <div class="row g-4">
+            {% for member in data.team %}
+            <div class="col-md-4">
+                <div class="team-card">
+                    <h4>{{ member.name }}</h4>
+                    <p><strong style="color:#6cd1ff;">Rol:</strong> {{ member.role }}</p>
+                    <p><strong style="color:#6cd1ff;">Ko‘nikmalar:</strong> {{ member.skills }}</p>
+                    <a href="{{ member.link }}" target="_blank">Profilga o‘tish →</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+            <p>Jamoa hali qo‘shilmagan.</p>
+        {% endif %}
+    </div>
+
+
+    <!-- 3. Why Us -->
+    <div class="section-card">
+        <h2 class="section-title"><i class="bi bi-lightbulb-fill"></i> 3. Nima uchun jamoamiz bu muammoni hal qila oladi?</h2>
+        <p>{{ data.why_us }}</p>
+    </div>
+
+
+    <!-- 4. Roadmap -->
+    <div class="section-card">
+        <h2 class="section-title"><i class="bi bi-map"></i> 4. Yo‘l xaritasi</h2>
+        <p>{{ data.roadmap }}</p>
+    </div>
+
+
+    <!-- 5. Implementation -->
+    <div class="section-card">
+        <h2 class="section-title"><i class="bi bi-cpu-fill"></i> 5. Yechimni qanday amalga oshiramiz?</h2>
+        <p>{{ data.implementation }}</p>
+    </div>
+
+</div>
+
+<!-- Logout Button -->
+
+
+
+</body>
+</html>
